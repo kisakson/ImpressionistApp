@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menuCircle"
+        android:title="Circle" />
+
+    <item android:id="@+id/menuDynamicCircle"
+        android:title="Dynamic Circle" />
+
+    <item android:id="@+id/menuSquare"
+        android:title="Square" />
+
+    <item android:id="@+id/menuLine"
+        android:title="Line" />
+
+    <item android:id="@+id/menuCMSC434Text"
+        android:title="CMSC434" />
+
+    <item android:id="@+id/menuCustomText"
+        android:title="Custom Text" />
+
+</menu>
