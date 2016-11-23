@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements OnMenuItemClickLi
 
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
+            // All possible brush types.
             case R.id.menuCircle:
                 Toast.makeText(this, "Circle Brush", Toast.LENGTH_SHORT).show();
                 _impressionistView.setBrushType(BrushType.Circle);
@@ -114,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements OnMenuItemClickLi
             case R.id.menuCustomText:
                 final EditText input = new EditText(this);
                 input.setInputType(InputType.TYPE_CLASS_TEXT);
+                // Create alert dialog with text input: user types in brush text value
                 new AlertDialog.Builder(this)
                         .setTitle("Set Brush Text Value")
                         .setIcon(android.R.drawable.ic_dialog_alert)
@@ -208,8 +210,11 @@ public class MainActivity extends AppCompatActivity implements OnMenuItemClickLi
 
         // Without this call, the app was crashing in the onActivityResult method when trying to read from file system
         FileUtils.verifyStoragePermissions(this);
-        // TODO
 
+        // See ImpressionistView.java for sources on saving image to gallery.
+        String filePath = _impressionistView.saveImage();
+        _impressionistView.addImageToGallery(filePath, MainActivity.this);
+        Toast.makeText(getApplicationContext(), "Image saved.", Toast.LENGTH_SHORT).show();
     }
 
     /**
